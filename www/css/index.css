@@ -1,0 +1,30 @@
+
+
+body {
+  background-color: #ffffff;
+}
+
+.sea{
+	margin-top:1vh;
+	font-size: 4vh;
+}
+
+.results{
+	margin-top: 3vh;
+}
+
+.header-bar{
+	background-color: #26a69a;
+}
+
+.list li .accordion-content{
+	background-color: #26a69a;
+	color: #ffffff;
+	text-align: center;
+	font-size: 4vh; 
+}
+
+.list li{
+	text-align: center;
+	font-size: 4vh;
+}
