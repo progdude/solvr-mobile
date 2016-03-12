@@ -10,6 +10,7 @@
         <preference name="fullscreen" value="true" />
         <link rel="stylesheet" type="text/css" href="css/phonon.css">
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <script type="text/javascript" src="js/jquery.min.js"></script>
 
 
 
@@ -23,7 +24,7 @@
         <header class="header-bar">
             
             <input type="search" class=" pull-left search-input sea" placeholder="Search">
-            <a class="btn pull-right icon icon-check"></a>
+            <a class="btn pull-right icon icon-check" onclick="solve()"></a>
         </header>
 
 
@@ -33,23 +34,8 @@
             <br>
                 <ul class="list">
 
-                    <li>
-                        <i class="pull-right icon icon-expand-more"></i>
-                        <a href="#link1" class="padded-list">Link 1</a>
-                        <div class="accordion-content">
-                          Element 1
-                        </div>
-                    </li>
 
-                    <li>
-                        <i class="pull-right icon icon-expand-more"></i>
-                        <a href="#link2" class="padded-list">Link 2</a>
-                        <div class="accordion-content">
-                          Element 2
-                        </div>
-                    </li>
-
-                    <li>
+                    <li style="visibility: hidden;">
                         <i class="pull-right icon icon-expand-more"></i>
                         <a href="#link3" class="padded-list">Link 3</a>
                         <div class="accordion-content">
@@ -65,10 +51,12 @@
 
 
         <!--</div>-->
-        <!--<script type="text/javascript" src="cordova.js"></script>-->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/coffeequate.min.js"></script>
         <script type="text/javascript" src="js/phonon.js"></script>
         <script type="text/javascript" src="js/accordian.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/solve.js"></script>
 
                 <script>
 
@@ -83,8 +71,8 @@
 
         </script>
 
-        <!--<script type="text/javascript">
+        <script type="text/javascript">
             app.initialize();
-        </script>-->
+        </script>
     </body>
 </html>
