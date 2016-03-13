@@ -321,10 +321,10 @@ function quadratic(e,s1){
 		var denominator = 2*twoSum;
 		var frac1 = fraction(numerator1/denominator);
 		var frac2 = fraction(numerator2/denominator);
-		$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list">'+frac1+' or '+frac2+'</a><div class="accordion-content">Combine Like Terms</div></li>');
+		$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list">'+frac1+' or '+frac2+'</a><div class="accordion-content">Solution</div></li>');
 	}
 	else{
-		$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list"><math> <mrow> <mi>x</mi><mo>=</mo> <mfrac> <!-- Start Numerator --> <mrow><mo>&#x2212;</mo><mi>'+b+'</mi><mo>&#x00B1;</mo> <msqrt> <mrow><mi>('+discriminant+')</mi> </mrow> </msqrt> </mrow> <!-- Start Denominator --> <mrow> <mi>('+2*twoSum+')</mi> </mrow> </mfrac> </mrow> </math></a><div class="accordion-content">Combine Like Terms</div></li>');
+		$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list"><math> <mrow> <mi>x</mi><mo>=</mo> <mfrac> <!-- Start Numerator --> <mrow><mo>&#x2212;</mo><mi>'+b+'</mi><mo>&#x00B1;</mo> <msqrt> <mrow><mi>('+discriminant+')</mi> </mrow> </msqrt> </mrow> <!-- Start Denominator --> <mrow> <mi>('+2*twoSum+')</mi> </mrow> </mfrac> </mrow> </math></a><div class="accordion-content">Solution</div></li>');
 	}
 }
 else{
@@ -334,9 +334,9 @@ else{
 		var denominator = 2*twoSum;
 		var frac1 = fraction(numerator1/denominator);
 		var frac2 = fraction(numerator2/denominator);
-		$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list">'+frac1+'<var>i</var> or '+frac2+'<var>i</var></a><div class="accordion-content">Combine Like Terms</div></li>');	}
+		$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list">'+frac1+'<var>i</var> or '+frac2+'<var>i</var></a><div class="accordion-content">Solution</div></li>');	}
 	else{
-		$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list"><math> <mrow> <mi>x</mi><mo>=</mo> <mfrac> <!-- Start Numerator --> <mrow><mo>&#x2212;</mo><mi>'+b+'</mi><mo>&#x00B1;i</mo> <msqrt> <mrow><mi>('+discriminant*-1+')</mi> </mrow> </msqrt> </mrow> <!-- Start Denominator --> <mrow> <mi>('+2*twoSum+')</mi> </mrow> </mfrac> </mrow> </math></a><div class="accordion-content">Combine Like Terms</div></li>');
+		$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list"><math> <mrow> <mi>x</mi><mo>=</mo> <mfrac> <!-- Start Numerator --> <mrow><mo>&#x2212;</mo><mi>'+b+'</mi><mo>&#x00B1;i</mo> <msqrt> <mrow><mi>('+discriminant*-1+')</mi> </mrow> </msqrt> </mrow> <!-- Start Denominator --> <mrow> <mi>('+2*twoSum+')</mi> </mrow> </mfrac> </mrow> </math></a><div class="accordion-content">Solution</div></li>');
 	}
 
 }
@@ -414,7 +414,7 @@ function linear(eq,s1){
 	var decimal = ans;
 	}	
 
-	$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list">'+format(frac.toString())+' or '+decimal.toFixed(2)+'</a><div class="accordion-content">Combine Like Terms</div></li>');
+	$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list">'+format(frac.toString())+' or '+decimal.toFixed(2)+'</a><div class="accordion-content">Solve for Variable</div></li>');
 	$(".list").append('<div class="graph"></div>');
 functionPlot({
   target: '.graph',
