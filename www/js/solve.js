@@ -31,13 +31,9 @@ function solve(){
 	}
 
 	$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list">'+part1+' = '+part2+'</a><div class="accordion-content">Simplify Each Side</div></li>');
-$.ajax({
-  url: "js/accordian.js",
-  dataType: "script",
-  success: success
-});
+
 	//split into first array
-	/*for(var i=0; i<e.length; i++){
+	for(var i=0; i<e.length; i++){
 		if(!(isNumber(e[i]) || e[i]==".")){
 			eq.push(e[i]);
 		}
@@ -127,8 +123,7 @@ $.ajax({
 	unSimply = null;
 	//end
 	
-	$(".ex").append('<div class="row"><div class="col s10 offset-s1 block"><div class="explain"><span class="equ">'+format(s1)+' = 0</span><span class="why">Combine Like Terms</span></div></div></div><hr>');
-
+		$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list">'+format(s1)+'</a><div class="accordion-content">Combine Like Terms</div></li>');
 
 
 	//split into array again
@@ -276,6 +271,12 @@ $.ajax({
 		quadratic(finalEq,s1);
 	}
 
+	$.ajax({
+  url: "js/accordian.js",
+  dataType: "script",
+  success: success
+});
+
 }
 
 
@@ -309,7 +310,7 @@ function quadratic(e,s1){
 	//var x2=-oneSum/2/twoSum-Math.pow(Math.pow(oneSum,2)-4*twoSum*zeroSum,0.5)/2/twoSum;
 	var b = (oneSum<0)?oneSum*-1:oneSum;
 	//$(".ex").append('<div class="row"><div class="col s10 offset-s1 block"><div class="explain"><span class="equ"><sup style="text-decoration:underline;">-'+oneSum +'&#xB1; &radic;<span style="text-decoration:overline;">'+oneSum+'<sup>2</sup>-4('+twoSum+')('+zeroSum+')</span></sup>&frasl;<sub>2('+twoSum+')</sub></span><span class="why">Use Quadratic Equation</span></div></div></div><hr>');
-	$(".ex").append('<div class="row"><div class="col s10 offset-s1 block"><div class="explain"><span class="equ"><math> <mrow> <mi>x</mi><mo>=</mo> <mfrac> <!-- Start Numerator --> <mrow><mo>&#x2212;</mo><mi>'+b+'</mi><mo>&#x00B1;</mo> <msqrt> <mrow> <msup><mi>'+oneSum+'</mi><mn>2</mn></msup><mo>&#x2212;</mo><mn>4</mn><mi>('+twoSum+')</mi><mi>('+zeroSum+')</mi> </mrow> </msqrt> </mrow> <!-- Start Denominator --> <mrow> <mn>2</mn><mi>('+twoSum+')</mi> </mrow> </mfrac> </mrow> </math></span><span class="why">Use Quadratic Equation</span></div></div></div><hr>');
+	$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list"><math> <mrow> <mi>x</mi><mo>=</mo> <mfrac> <!-- Start Numerator --> <mrow><mo>&#x2212;</mo><mi>'+b+'</mi><mo>&#x00B1;</mo> <msqrt> <mrow> <msup><mi>'+oneSum+'</mi><mn>2</mn></msup><mo>&#x2212;</mo><mn>4</mn><mi>('+twoSum+')</mi><mi>('+zeroSum+')</mi> </mrow> </msqrt> </mrow> <!-- Start Denominator --> <mrow> <mn>2</mn><mi>('+twoSum+')</mi> </mrow> </mfrac> </mrow> </math></a><div class="accordion-content">Use Quadratic Equation</div></li>');
 		var discriminant = Math.pow(oneSum,2)-4*twoSum*zeroSum;
 
 
@@ -320,10 +321,10 @@ function quadratic(e,s1){
 		var denominator = 2*twoSum;
 		var frac1 = fraction(numerator1/denominator);
 		var frac2 = fraction(numerator2/denominator);
-		$(".ex").append('<div class="row"><div class="col s10 offset-s1 block"><div class="explain"><span class="equ">'+frac1+' or '+frac2+'</span><span class="why">Solution</span></div></div></div><hr>');
+		$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list">'+frac1+' or '+frac2+'</a><div class="accordion-content">Combine Like Terms</div></li>');
 	}
 	else{
-		$(".ex").append('<div class="row"><div class="col s10 offset-s1 block"><div class="explain"><span class="equ"><math> <mrow> <mi>x</mi><mo>=</mo> <mfrac> <!-- Start Numerator --> <mrow><mo>&#x2212;</mo><mi>'+b+'</mi><mo>&#x00B1;</mo> <msqrt> <mrow><mi>('+discriminant+')</mi> </mrow> </msqrt> </mrow> <!-- Start Denominator --> <mrow> <mi>('+2*twoSum+')</mi> </mrow> </mfrac> </mrow> </math></span><span class="why">Solution</span></div></div></div><hr>');
+		$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list"><math> <mrow> <mi>x</mi><mo>=</mo> <mfrac> <!-- Start Numerator --> <mrow><mo>&#x2212;</mo><mi>'+b+'</mi><mo>&#x00B1;</mo> <msqrt> <mrow><mi>('+discriminant+')</mi> </mrow> </msqrt> </mrow> <!-- Start Denominator --> <mrow> <mi>('+2*twoSum+')</mi> </mrow> </mfrac> </mrow> </math></a><div class="accordion-content">Combine Like Terms</div></li>');
 	}
 }
 else{
@@ -333,10 +334,9 @@ else{
 		var denominator = 2*twoSum;
 		var frac1 = fraction(numerator1/denominator);
 		var frac2 = fraction(numerator2/denominator);
-		$(".ex").append('<div class="row"><div class="col s10 offset-s1 block"><div class="explain"><span class="equ">'+frac1+'<var>i</var> or '+frac2+'<var>i</var></span><span class="why">Solution</span></div></div></div><hr>');
-	}
+		$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list">'+frac1+'<var>i</var> or '+frac2+'<var>i</var></a><div class="accordion-content">Combine Like Terms</div></li>');	}
 	else{
-		$(".ex").append('<div class="row"><div class="col s10 offset-s1 block"><div class="explain"><span class="equ"><math> <mrow> <mi>x</mi><mo>=</mo> <mfrac> <!-- Start Numerator --> <mrow><mo>&#x2212;</mo><mi>'+b+'</mi><mo>&#x00B1;i</mo> <msqrt> <mrow><mi>('+discriminant*-1+')</mi> </mrow> </msqrt> </mrow> <!-- Start Denominator --> <mrow> <mi>('+2*twoSum+')</mi> </mrow> </mfrac> </mrow> </math></span><span class="why">Solution</span></div></div></div><hr>');
+		$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list"><math> <mrow> <mi>x</mi><mo>=</mo> <mfrac> <!-- Start Numerator --> <mrow><mo>&#x2212;</mo><mi>'+b+'</mi><mo>&#x00B1;i</mo> <msqrt> <mrow><mi>('+discriminant*-1+')</mi> </mrow> </msqrt> </mrow> <!-- Start Denominator --> <mrow> <mi>('+2*twoSum+')</mi> </mrow> </mfrac> </mrow> </math></a><div class="accordion-content">Combine Like Terms</div></li>');
 	}
 
 }
@@ -344,7 +344,7 @@ else{
 	
 	MathJax.Hub.Queue(["Typeset",MathJax.Hub,"MathOutput"]);
 	//$(".ex").append('<div class="row"><div class="col s10 offset-s1 block"><div class="explain"><span class="equ">'+x1.toFixed(2)+' or '+x2.toFixed(2)+'</span><span class="why">Solution</span></div></div></div><hr>');
-	$(".ex").append('<div class="graph"></div><hr>');
+	$(".list").append('<div class="graph"></div><hr>');
 
 	functionPlot({
   target: '.graph',
@@ -414,14 +414,14 @@ function linear(eq,s1){
 	var decimal = ans;
 	}	
 
-	$(".ex").append('<div class="row"><div class="col s10 offset-s1 block"><div class="explain"><span class="equ">'+format(frac.toString())+' or '+decimal.toFixed(2)+'</span><span class="why">Solve for Variable</span></div></div></div><hr>');
-	$(".ex").append('<div class="graph"></div><hr>');
+	$(".list").append('<li><i class="pull-right icon icon-expand-more"></i><a href="#link1" class="padded-list">'+format(frac.toString())+' or '+decimal.toFixed(2)+'</a><div class="accordion-content">Combine Like Terms</div></li>');
+	$(".list").append('<div class="graph"></div>');
 functionPlot({
   target: '.graph',
   data: [{
     fn: s1,
   }]
-});*/
+});
 
 }
 
